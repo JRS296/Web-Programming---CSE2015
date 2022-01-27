@@ -1,0 +1,18 @@
+table,th,td {
+        border: 1px solid black;
+    }
+     
+table {
+        border-spacing: 5px;
+        width: 100%;
+}
+
+.b1, .b2 {
+
+}
+
+#center {  
+        width: 40%;    
+        object-fit: none; 
+}  
+
