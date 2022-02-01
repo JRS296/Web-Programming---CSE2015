@@ -1,0 +1,27 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/b6/c4/bc/b6c4bcd6ae6baca3cf80f5992f4641d9.jpg);
+    background-position: 0 -10%;
+    background-repeat: no-repeat;
+    background-color: rgb(207,204,197);
+    
+    
+    
+}
+
+.section-1 {
+    float: right;
+    width: 40%;
+    padding: 2.5% 1.5%;
+    margin: 2.5% 0.5%;
+    height: 20vh;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashed_box {
+    width: 95%;
+    padding: 1% 1%;
+    margin: 5.5% 0.5%;
+    border-style: dotted dashed solid double;
+}
