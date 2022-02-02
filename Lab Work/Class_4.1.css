@@ -1,33 +1,75 @@
 body {
-    
-}
-
-.header1 {
-    color: white;
-    display: flex;
-    justify-content: center;
     background-color: pink;
-    padding: 10px 0 10px 0;
 }
 
-.sec_header {
-    color: white;
+.section-1 {
+    float: left;
+    width: 58%;
+    padding: 2.5% 1.5%;
+    margin: 0.5%;
+    height: 40vh;
+    background-color: beige;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: row; 
 }
 
-.header2 {
+.section-2 {
     float: right;
-    width: 48%;
-    background-color: pink;
-    border-bottom: 2px solid black;
-    align-sel
+    width: 34%;
+    padding: 2.5% 1.5%;
+    height: 40vh;
+    margin: 0.5%;
+    background-color: beige;
 }
 
-.header3 {
-    color: white;
+.section-3 {
+    float: left;
+    background-color: rgb(181, 181, 181);
+    text-align: center;
+    margin: 0.5%;
+    width: 96%;
+    padding: 5px 1.5%;
+    height: 9vh;
+}
+
+.section-4 {
+    position: fixed;
+    bottom: 0;
+    margin: 0.5%;
+    width: 98%;
+    height: 7vh;
+    background-color: beige;
     display: flex;
     justify-content: center;
+}
+
+.section-5 {
+    float: right;
+    width: 29.33%;
+    padding: 2.5% 1.5%;
+    height: 40vh;
+    margin: 0.5%;
+    background-color: beige;
+}
+
+nav {
+    list-style-type: none;
+    background-color: beige;
+    margin: 0.5%;
+    display: flex;
+}
+
+nav div{
+    
+    color: black;
+    width: 100%;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    align-items: center;
+    border-bottom: 2px solid rgb(96, 99, 96);;
+}
+
+li a:hover{
+    background-color: rgb(3, 68, 3);
+    transition: 0.3s;
 }
