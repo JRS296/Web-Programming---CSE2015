@@ -1,0 +1,33 @@
+body {
+    
+}
+
+.header1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    padding: 10px 0 10px 0;
+}
+
+.sec_header {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row; 
+}
+
+.header2 {
+    float: right;
+    width: 48%;
+    background-color: pink;
+    border-bottom: 2px solid black;
+    align-sel
+}
+
+.header3 {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
