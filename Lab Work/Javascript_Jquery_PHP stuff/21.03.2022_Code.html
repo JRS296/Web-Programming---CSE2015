@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Class_1.css">
+    <script src="https://use.fontawesome.com/c2108fd2b3.js"></script>
+    <title>Form Box + PHP (Class - ?? (21.3.2022); CSE2015 ELA)</title>
+</head>
+
+<body>
+    <form method="post" action="index.php">
+        <h1>The World of Fruit</h1>
+        <div class="b1" style="border:3px; width: 30%; border-style:solid; border-color:#363434; padding: 1em;">
+            <center>
+                <h2>Fruit Survey</h2>
+            </center>
+            <p>
+                <label for="name">Name</label>
+            <div>
+                <input type="text" name="name" id="name" value="">
+            </div>
+
+            <label for="address">Address</label>
+            <div>
+                <input type="text" name="address" id="address" value="">
+            </div>
+
+            <label for="email">Email</label>
+            <div>
+                <input type="text" name="email" id="email" value="">
+            </div>
+            </p>
+
+            <h4>How many fruits do you have per day?</h4>
+            <p>
+                <label>
+                    <input type="radio" name="howMany" value="zero"> 0
+                </label>
+                <label>
+                    <input type="radio" name="howMany" value="one"> 1
+                </label>
+                <label>
+                    <input type="radio" name="howMany" value="two"> 2
+                </label>
+                <label>
+                    <input type="radio" name="howMany" value="twoplus"> More than 2
+                </label>
+            </p>
+
+            <h4>My favourite Fruit:</h4>
+            <p>
+                <label for="favoriteFruit">My favorite fruit</label>
+            <div>
+                <select name="favoriteFruit[]" id="favoriteFruit" size="4" multiple="">
+                    <option value="apple">Apple</option>
+                    <option value="banana">Banana</option>
+                    <option value="plum">Plum</option>
+                    <option value="pomegranate">Pomegranate</option>
+                    <option value="strawberry">Strawberry</option>
+                    <option value="watermelon">Watermelon</option>
+                </select>
+            </div>
+            </p>
+
+            <h4>Would you like a Brochure?</h4>
+            <p>
+                <label for="brochure">Would you like a brochure?</label>
+            <div>
+                <input type="checkbox" name="brochure" id="brochure" value="Yes"> Yes
+            </div>
+            </p>
+
+            <center>
+                <div>
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </center>
+        </div>
+    </form>
+</body>
+
+</html>
