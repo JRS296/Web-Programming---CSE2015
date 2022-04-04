@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Slide Up</title>
+    <script src="jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #panel,
+        #flip {
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(214, 214, 214);
+            border: solid 1px black;
+            width: 60rem;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#slideup").click(function () {
+                $("#panel").slideUp("slow");
+            });
+            $("#slidedown").click(function () {
+                var name = $("#t1").val();
+                var x = { A: 1, I: 1, J: 1, Q: 1, Y: 1, B: 2, K: 2, R: 2, C: 3, G: 3, L: 3, S: 3, D: 4, M: 4, T: 4, E: 5, H: 5, N: 5, X: 5, U: 6, V: 6, W: 6, O: 7, Z: 7, F: 8, P: 8 };
+                var nameScore = 0;
+                for (var i = 0; i < name.length; i++) {
+                    var curChar = name.charAt(i);
+                    console.log(curChar);
+                    var curValue = x[curChar];
+                    nameScore = nameScore + curValue;
+                } //for()
+                console.log(nameScore);
+                var chaldean = nameScore;
+                console.log(chaldean);
+                while (chaldean >= 10 && chaldean != 11 && chaldean != 22 && chaldean != 33) {
+                    var total = 0;
+                    var str = '' + chaldean;
+                    for (var i = 0; i < str.length; i++) {
+                        total = total + parseInt(str.charAt(i));
+                    } //for()
+                    chaldean = total;
+                } //while
+                console.log(chaldean);
+
+                if (chaldean == 1) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You radiate with a dynamic and efficient energy."); }
+                else if (chaldean == 2) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You appear friendly and unpretentious."); }
+                else if (chaldean == 3) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You are uplifting, inspiring, and charming."); }
+                else if (chaldean == 4) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You love the intimacy, consistency, and the security a family provides"); }
+                else if (chaldean == 5) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You are a stimulating person."); }
+                else if (chaldean == 6) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You radiate understanding and compassion"); }
+                else if (chaldean == 7) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You seem mysterious and different."); }
+                else if (chaldean == 8) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You appear strong and powerful."); }
+                else if (chaldean == 9) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You have an impressive and aristocratic bearing."); }
+                else if (chaldean == 11) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You have worked hard to gain confidence and overcome, at least to some extent, an in-born shyness."); }
+                else if (chaldean == 22) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You radiate reliability and consistency."); }
+                else if (chaldean == 33) { $("#panel").text("Chaldean destiny Number: " + chaldean + " Personality: You inspire confidence."); }
+                $("#panel").slideDown("slow");
+            });
+            $("#slideToggle").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    Name: <input type="text" id="t1"></br> <br>
+    <div><button id="slidedown"> Slide DOWN</button></div> <br> <br>
+    <div id="panel"></div>
+</body>
+
+</html>
