@@ -3,8 +3,9 @@
 <HEAD>
     <!-- By: Jonathan Rufus Samuel - 20BCT0332 (Lab CAT 2 - 04.04.2022) -->
     <TITLE> LAB CAT-2 (20BCT0332) </TITLE>
-    <script src="jquery.js"></script>
-    <style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--
+        <style>
         #ans,
         #flip {
             padding: 10px;
@@ -19,50 +20,71 @@
             display: none;
         }
     </style>
+    -->
+
     <SCRIPT>
         $(document).ready(function () {
             $("#slideup").click(function () {
                 $("#ans").slideUp("slow");
             });
             $("#slidedown").click(function () {
-                var f1 = $(#fn1).value;
-                var f2 = $(#fn2).value;
-                console.log(f1);
-                console.log(f2);
-                if ($(ln1).value != $(ln2).value) {
-                    alert("Both Names must have same last name");
-                }
-                else if ($(ln1).charAt(0).isUpper() == false &&
-                    $(ln2).charAt(0).isUpper() == false && $(fn1).charAt(0).isUpper() == false &&
-                    $(fn1).charAt(0).isUpper() == false) {
-                    alert("names must have first letter in capital");
-                }
-                else {
-                    var len1 = f1.length();
-                    var len2 = f2.length();
-                    var x = (f1 > f2) ? f1: f2;
-                    var y = (f1 < f2) ? f1: f2;
-                    var index = 0;
+                similarity();
+                $("#ans").slideDown();
+            });
+        });
 
-                    for (var i = 0; i < x; i++) {
-                        for (var j = 0; j < y; j++) {
-                            var c1 = charAt(i).toLower();
-                            var c2 = charAt(j).toLower();
+        function similarity() {
+            var f1 = $("#fn1").val();
+            var f2 = $("#fn2").val();
+            var l1 = $("#ln1").val();
+            var l2 = $("#ln2").val();
+            console.log(f1);
+            console.log(f2);
+            console.log(l1);
+            console.log(l2);
+            if (l1 != l2) {
+                alert("Both Names must have same last name");
+            }
+            else if (isUpper(l1.charAt(0)) == false &&
+                isUpper(l2.charAt(0)) == false && isUpper(f1.charAt(0)) == false &&
+                isUpper(f2.charAt(0)) == false) {
+                alert("names must have first letter in capital");
+            }
+            else {
+                var len1 = f1.length;
+                var len2 = f2.length;
+                var x = (len1 > len2) ? len1 : len2;
+                var big = (f1.length > f2.length) ? f1 : f2;
+                var y = (len1 < len2) ? len1 : len2;
+                var small = (f1.length < f2.length) ? f1 : f2;
+                var index = 0;
+                console.log(x);
+                console.log(y);
+                console.log(big);
+                console.log(small);
 
-                            if (c1 == c2) {
-                                if (c1 == '') {
-                                    continue;
-                                }
-                                index++;
-                                break;
+                for (var i = 0; i < y; i++) {
+                    for (var j = 0; j < x; j++) {
+                        var c1 = (big.charAt(j)).toLowerCase();
+                        var c2 = (small.charAt(i)).toLowerCase();
+
+                        if (c1 == c2) {
+                            if (c1 == '') {
+                                continue;
                             }
+                            index++;
+                            console.log(c1);
+                            break;
                         }
                     }
-                    var answer = index / x * 100;
-                    $(#ans).text("Two people have same last name, they differ in their first name.The similarity index of their first name is: "+answer+" % ");
-                    $("#ans").slideDown("slow"); 
                 }
-            });
+                var answer = index / x * 100;
+                $("#ans").text("Two people have same last name, they differ in their first name.The similarity index of their first name is: " + answer + " % ");
+            }
+            function isUpper(str) {
+                return !/[a-z]/.test(str) && /[A-Z]/.test(str);
+            }
+        }
     </SCRIPT>
 </HEAD>
 
@@ -70,9 +92,9 @@
     <H3>Similarity Index</H3>
     <H5>By: Jonathan Rufus Samuel (20BCT0332) - Lab CAT 2 (04.04.2022)</H5>
     FIRST NAME 1: <input type="text" id="fn1"> LAST NAME 1: <input type="text" id="ln1"></br>
-    FIRST NAME 2: <input type="text" id="fn2"> LAST NAME 2: <input type="text" id="ln1"></br>
+    FIRST NAME 2: <input type="text" id="fn2"> LAST NAME 2: <input type="text" id="ln2"></br>
     <br>
-    <div><button id="slidedown">SUBMIT</button></div> <br>
+    <div><button id="slidedown">SUBMIT</button> <button id="slideup">Slide Up</button></div> <br>
     <br>
     <div id="ans"></div>
 </BODY>
