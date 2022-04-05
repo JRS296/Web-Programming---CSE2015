@@ -1,0 +1,80 @@
+<HTML>
+
+<HEAD>
+    <!-- By: Jonathan Rufus Samuel - 20BCT0332 (Lab CAT 2 - 04.04.2022) -->
+    <TITLE> LAB CAT-2 (20BCT0332) </TITLE>
+    <script src="jquery.js"></script>
+    <style>
+        #ans,
+        #flip {
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(214, 214, 214);
+            border: solid 1px black;
+            width: 60rem;
+        }
+
+        #ans {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <SCRIPT>
+        $(document).ready(function () {
+            $("#slideup").click(function () {
+                $("#ans").slideUp("slow");
+            });
+            $("#slidedown").click(function () {
+                var f1 = $(#fn1).value;
+                var f2 = $(#fn2).value;
+                console.log(f1);
+                console.log(f2);
+                if ($(ln1).value != $(ln2).value) {
+                    alert("Both Names must have same last name");
+                }
+                else if ($(ln1).charAt(0).isUpper() == false &&
+                    $(ln2).charAt(0).isUpper() == false && $(fn1).charAt(0).isUpper() == false &&
+                    $(fn1).charAt(0).isUpper() == false) {
+                    alert("names must have first letter in capital");
+                }
+                else {
+                    var len1 = f1.length();
+                    var len2 = f2.length();
+                    var x = (f1 > f2) ? f1: f2;
+                    var y = (f1 < f2) ? f1: f2;
+                    var index = 0;
+
+                    for (var i = 0; i < x; i++) {
+                        for (var j = 0; j < y; j++) {
+                            var c1 = charAt(i).toLower();
+                            var c2 = charAt(j).toLower();
+
+                            if (c1 == c2) {
+                                if (c1 == '') {
+                                    continue;
+                                }
+                                index++;
+                                break;
+                            }
+                        }
+                    }
+                    var answer = index / x * 100;
+                    $(#ans).text("Two people have same last name, they differ in their first name.The similarity index of their first name is: "+answer+" % ");
+                    $("#ans").slideDown("slow"); 
+                }
+            });
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <H3>Similarity Index</H3>
+    <H5>By: Jonathan Rufus Samuel (20BCT0332) - Lab CAT 2 (04.04.2022)</H5>
+    FIRST NAME 1: <input type="text" id="fn1"> LAST NAME 1: <input type="text" id="ln1"></br>
+    FIRST NAME 2: <input type="text" id="fn2"> LAST NAME 2: <input type="text" id="ln1"></br>
+    <br>
+    <div><button id="slidedown">SUBMIT</button></div> <br>
+    <br>
+    <div id="ans"></div>
+</BODY>
+
+</HTML>
