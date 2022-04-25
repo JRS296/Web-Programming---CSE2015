@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: pink;
+            font-size: 20px;
+            row-gap: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        .item {
+            background-color: grey;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+        }
+
+        .block {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #04AA6D;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form name="test" action="q2.php" method="post" n>
+            <div class="item">
+                NAME:<br>
+                <input type="text" name="name" id=" na" size="30"><br>
+            </div>
+            <div class="item">
+                MOBILE NAME<br>
+                <input type="text" name="mobile" id="mo" size="30"><br>
+            </div>
+            <div class="item">
+                MOBILE NUMBER<BR>
+                <input TYPE="TEXT" name="mobinum" size="30"><br>
+            </div>
+
+            <div class="item">
+                PRICE<br>
+                <input type="number" name="price" id="pr" size="30"><br><br>
+            </div>
+            <button type="submit" class="block" name="submit">SUBMIT</button> <BR>
+            <button type="submit" name="delete" CLASS="block">DELETE</button> <BR>
+            <button type="submit" name="view" CLASS="block">VIEW PHONE DETAILS LESS THAN 6000</button>
+        </form>
+
+
+</body>
+
+</html>
+
+<!--
+    VALIDATION CODE IF NEEDED->
+if(isset ($_POST['check']))
+{
+    $username=$_POST['name'];
+    $phone=$_POST['mobinum'];
+
+    $sql="SELECT * FROM data WHERE  user_name = '$username' AND mobinum = '$phone' ";
+    $result=mysqli_query($con,$sql);
+   
+    if(mysqli_num_rows($result) == 1)
+    {
+        echo "WELCOME" .$username;
+    }
+    else
+    {
+        echo "USER NOT FOUND TRY AGAIN";
+    }
+
+}
+?>
+
+
+ALSO WE CAN USE JAVASCRIPT TO APPLY  FURTHER INPUT CONSTRAINTS
+ <script>
+        function val()
+        {
+            var phone_number = document.test.mobinum.value;
+            alert("phone number is"+phone_number);
+            if(phone_number.length > 10)
+            {alert(" check mobile number again");
+            return false;}
+            else
+            {
+                alert("correct");
+                return true;
+            }
+        
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+    <form name="test" onsubmit = " return val()" action="q2.php" method="post">
+
+-->
