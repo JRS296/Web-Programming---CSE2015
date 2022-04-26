@@ -46,3 +46,20 @@
 </body>
 
 </html>
+
+<!--
+    <h1> VALIDATION</div>
+        <div class="container">
+            <br>
+            DATA ENTERED BY YOU : <br>
+
+            Name: Jonathan Rufus Samuel <br>
+            Address: B 006 Neeladri Sadan apts, 4th cr Manjunath Lyt, M <br>
+            Email: jonathansamuel296@gmail.com <br>
+
+            NUMBER OF FRUITS - 2 <BR>
+            Selected fruit is : Watermelon <br>
+
+            Brochure: Yes <br>
+        </div>
+-->
