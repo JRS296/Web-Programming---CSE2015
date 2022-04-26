@@ -7,20 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .container {
-            background-color: grey;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            background-color: black;
-            color: white;
-            text-align: center;
-            row-gap: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -30,7 +16,7 @@
 
             echo "DATA ENTERED BY YOU : <br>";
 
-            $name = $_POST['f_name'];
+            $name = $_POST['name'];
             $address = $_POST['address'];
             $email = $_POST['email'];
             echo "<br>";

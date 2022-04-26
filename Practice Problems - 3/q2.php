@@ -1,6 +1,10 @@
 <?php
+$servername = "127.0.0.1";
+$username ="scse";
+$password = "scse";
+$dbname = "test";
+$con = mysqli_connect($servername, $username, $password, $dbname); 
 
-$con = mysqli_connect('localhost', 'scse', 'scse', 'db');
 if ($con) {
     echo 'CONNECTION SUCCESSFUL' . "<br>";
 } else {

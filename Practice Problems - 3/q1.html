@@ -3,62 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container {
-            background-color: rgb(121, 203, 203);
-            text-align: center;
-            row-gap: 30px;
-            padding: 50px;
-            font-size: 30px;
-            display: flex;
-        }
-
-        .rad {
-
-            padding: 20px;
-            border: 2px solid black;
-            justify-content: center;
-
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Md.SujoN AhmeD">
+    <title>Q1.html</title>
 </head>
 
-<BODY>
-    <div class="container">
-        <form action="q1.php" method="post">
-            NAME :
-            <input type="text" name="f_name" id="f" size="50">
-            <br>
-            ADDRESS:
-            <INPUT type="text" name="address" id="ad" size="50">
-            <br>
-            EMAIL:
-            <input type="EMAIL" name="email" id="em" size="50">
-            <br>
-            <div class="rad">
-                how many pieces of fruit you want:<br>
-                <input type="radio" id="zero" name="radio" VALUE="ZERO" width: 20em; height: 20em> 0<br>
-                <input type="radio" id="one" name="radio" VALUE="ONE" size="50"> 1<br>
-                <input type="radio" id="two" name="radio" VALUE="TWO" size="50"> 2<br>
-            </div>
-            select fruit:
-            <select name="fruit" width="50 px">
-                <option value="apple">apple</option>
-                <option value="banana">banana</option>
-                <option value="plum">plum</option>
-                <option value="pomergranate">pomergranate</option>
-            </select>
-            <br>
-            <input type="checkbox" name="CH" VALUE="YES I WANT DISCOUNT"> DO YOU WANT DISCOUNT
-            <br>
-    </div>
-    <div class="button">
-        <BUTTON style="height:50px ;width:100px; color:blueviolet" onclick"f1_val.php">SUBMIT
-    </div>
+<body>
+    <!--THE WORLD FRUIT DESIGN FORM-->
+    <form name="test" action="q1.php" method="post" style="width:430px; background-color: #f1c40f; color: #222f3e;">
+        <fieldset>
+            <h1 style="text-align:center; background-color: #222f3e; color: #f1c40f">The World Fruit</h1>
+            <h3 style="text-align:center;">Fruit Servey</h3>
+            <table width="400px">
+                <tr>
+                    <td>
+                        <label for="name">Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="name" maxlength="50" size="30" placeholder="Enter your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Address</label>
+                    </td>
+                    <td>
+                        <input type="text" name="address" maxlength="50" size="30" placeholder="Enter your address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" maxlength="50" size="30" placeholder="Enter your email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pieces_fruit">How many pieces of fruit do you eat per day?</label>
+                    </td>
+                    <td>
+                        <br>
+                        <input type="radio" name="pieces_fruit">0 <br>
+                        <input type="radio" name="pieces_fruit">1 <br>
+                        <input type="radio" name="pieces_fruit">2 <br>
+                        <input type="radio" name="pieces_fruit">More than 2 <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="favourit_fruit">My favourit fruit</label>
+                    </td>
+                    <td>
+                        <br>
+                        <select multiple size="4">
+                            <option value="banana">Banana</option>
+                            <option value="apple">Apple</option>
+                            <option value="mango">Mango</option>
+                            <option value="orange">Orange</option>
+                            <option value="watermaleon">Watermaleon</option>
+                        </select>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <label for="brochure">Would you like a brochure?</label>
+                    </td>
+                    <td>
+                        <br>
+                        <input type="checkbox" name="brochure">Yes
+                        <input type="checkbox" name="brochure">No
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <br>
+                        <input type="submit" value="submit"
+                            style="background-color: #222f3e; color:#f1c40f; width: 80px; height: 30px;">
+                        <input type="reset" value="reset"
+                            style="background-color: #222f3e; color:#f1c40f; width: 80px; height: 30px;">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
 </body>
 
 </html>
-
